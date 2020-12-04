@@ -14,4 +14,4 @@ The following funtionality will be added:
 
 ### More to be added
 
-![tjc logo](https://raw.githubusercontent.com/timjchandler/deadline-tracker/c30c9cb4700d99b9154560c9da0356004477bc70/single-colour.svg)
+![tjc logo](https://raw.githubusercontent.com/timjchandler/deadline-tracker/c30c9cb4700d99b9154560c9da0356004477bc70/single-colour.svg | width=100)
