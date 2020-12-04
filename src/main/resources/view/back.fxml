@@ -15,10 +15,16 @@
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#paneDragged" onMousePressed="#panePressed" prefHeight="600.0" prefWidth="900.0" styleClass="background" stylesheets="@../css/back.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tjc.controller.Controller">
    <Pane fx:id="contentPane" layoutX="20.0" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
       <children>
-         <Pane fx:id="helpPane" layoutX="-34.0" layoutY="43.0" prefHeight="300.0" prefWidth="741.0">
+         <Pane fx:id="helpPane" layoutX="114.0" layoutY="37.0" prefHeight="300.0" prefWidth="741.0">
             <children>
-               <Pane layoutX="626.0" styleClass="start-arrow" />
-               <Text layoutX="178.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="start-text" text="Click here to open the menu ">
+               <Pane fx:id="menuHelpArrow" layoutX="626.0" styleClass="start-arrow" />
+               <Text fx:id="menuHelpText" layoutX="178.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="start-text" text="Click here to open the menu ">
+                  <font>
+                     <Font name="Arial Rounded MT Bold" size="31.0" />
+                  </font>
+               </Text>
+               <Pane fx:id="addHelpArrow" layoutX="457.0" layoutY="58.0" styleClass="add-arrow" />
+               <Text fx:id="addHelpText" layoutX="96.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="start-text" text="Click here to add a deadline">
                   <font>
                      <Font name="Arial Rounded MT Bold" size="31.0" />
                   </font>

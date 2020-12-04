@@ -1,0 +1,12 @@
+.bg-pane {
+    -fx-pref-height: 600;
+    -fx-pref-width: 600;
+    -fx-background-color: transparent;
+}
+.day-label {
+    -fx-min-height: 80;
+    -fx-min-width: 80;
+    -fx-max-height: 80;
+    -fx-min-width: 80;
+    -fx-background-color: linear-gradient(to top right, rgba(2,48,71,0.8), rgba(42, 157, 143, 0.8));
+}

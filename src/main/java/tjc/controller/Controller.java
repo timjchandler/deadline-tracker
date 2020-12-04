@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
+    private User user;
     private double xOffset;
     private double yOffset;
 
@@ -38,16 +39,16 @@ public class Controller implements Initializable {
     private Pane contentPane;
 
     @FXML
-    private Button menu1;
+    private Pane addHelpArrow;
 
     @FXML
-    private Button menu2;
+    private Pane menuHelpArrow;
 
     @FXML
-    private Button menu3;
+    private Text addHelpText;
 
     @FXML
-    private Button menu4;
+    private Text menuHelpText;
 
     @FXML
     private Slider opacitySlider;
@@ -80,7 +81,7 @@ public class Controller implements Initializable {
 
     public void toggleMenu() {
         menuBox.setVisible(!menuBox.isVisible());
-        toggleHelp(false);
+        toggleHelp(user.isEmpty());
     }
 
     protected void updateOpacity(ActionEvent e) {
@@ -102,6 +103,8 @@ public class Controller implements Initializable {
     }
 
     public void initialize(URL location, ResourceBundle resources) {
+        user = new User("Tim");
+        toggleHelp(false);
         toggleMenu();
         showUser();
         opacitySlider.valueProperty().addListener(new ChangeListener<Number>() {
@@ -116,12 +119,21 @@ public class Controller implements Initializable {
     }
 
     private void showUser() {
-        if (new User().isEmpty()) {
+        if (user.isEmpty()) {
             toggleHelp(true);
         }
     }
 
     private void toggleHelp(boolean on) {
-        helpPane.setVisible(on);
+        if (menuBox.isVisible()) {
+            menuHelpArrow.setVisible(false);
+            menuHelpText.setVisible(false);
+            addHelpArrow.setVisible(on);
+            addHelpText.setVisible(on);
+        }
+        else {
+            menuHelpArrow.setVisible(on);
+            menuHelpText.setVisible(on);
+        }
     }
 }
