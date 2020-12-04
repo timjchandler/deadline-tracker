@@ -13,3 +13,5 @@ The following funtionality will be added:
 + Changing distance into future that is viewed
 
 ### More to be added
+
+![tjc logo](https://github.com/timjchandler/deadline-tracker/blob/master/src/main/resources/media/logo.png)
