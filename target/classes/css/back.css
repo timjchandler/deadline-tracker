@@ -1,12 +1,14 @@
 /* BUTTONS */
 
 .top-buttons {
+    -fx-effect: dropshadow(gaussian , rgba(0,0,0,1) , 10,0,0,1);
     -fx-max-height: 20px;
     -fx-min-height: 20px;
     -fx-max-width: 20px;
     -fx-min-width: 20px;
 }
 .top-buttons:hover {
+    -fx-effect: dropshadow(gaussian , rgba(255,255,255,1) , 10,0,0,1);
     -fx-background-color: #eae2b7;
 }
 .exit-button {
@@ -86,4 +88,21 @@
 }
 .slider .thumb {
     -fx-background-color: #f0efeb;
+}
+
+/* START INFORMATION */
+.start-arrow {
+    -fx-min-height: 100;
+    -fx-max-height: 100;
+    -fx-min-width: 115;
+    -fx-max-width: 115;
+    -fx-opacity: 0.8;
+    -fx-background-color: #f0efeb;
+    -fx-shape: "M194.7,99.6c3.1,0.3,4.6-1.8,3.3-4.6l-12-26.2c-1.3-2.8-3.8-3.1-5.6-0.5l-16.7,23.5c-1.8,2.5-0.8,4.9,2.4,5.2l3.9,0.4
+               		c3.1,0.3,4.8,3,3.8,5.9c0,0-11.9,34.4-32.2,48.2c-21.1,14.4-76.7,22.5-76.7,22.5c-3.1,0.5-5.6,2.6-5.6,4.8s2.5,3.6,5.6,3.2
+               		c0,0,58.4-8.2,81.8-24.4c22.7-15.8,35.1-53.6,35.1-53.6c1-3,4.3-5.1,7.4-4.8L194.7,99.6z";
+}
+.start-text {
+    -fx-fill: #f0efeb;
+    -fx-opacity: 0.8;
 }

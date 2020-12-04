@@ -2,5 +2,7 @@ package tjc;
 
 public class TrackerMain {
 
-        // TODO
+    public static void main(String[] args) {
+        Main.main(args);
+    }
 }

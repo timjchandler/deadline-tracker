@@ -9,8 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import tjc.model.User;
 
 import java.awt.event.ActionEvent;
 import java.net.URI;
@@ -23,10 +26,16 @@ public class Controller implements Initializable {
     private double yOffset;
 
     @FXML
+    private Pane helpPane;
+
+    @FXML
     private AnchorPane mainPane;
 
     @FXML
     private Button minBtn;
+
+    @FXML
+    private Pane contentPane;
 
     @FXML
     private Button menu1;
@@ -71,6 +80,7 @@ public class Controller implements Initializable {
 
     public void toggleMenu() {
         menuBox.setVisible(!menuBox.isVisible());
+        toggleHelp(false);
     }
 
     protected void updateOpacity(ActionEvent e) {
@@ -92,6 +102,8 @@ public class Controller implements Initializable {
     }
 
     public void initialize(URL location, ResourceBundle resources) {
+        toggleMenu();
+        showUser();
         opacitySlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
@@ -101,5 +113,15 @@ public class Controller implements Initializable {
                 mainPane.setStyle(start + opacitySlider.getValue() + mid + opacitySlider.getValue() + end);
             }
         });
+    }
+
+    private void showUser() {
+        if (new User().isEmpty()) {
+            toggleHelp(true);
+        }
+    }
+
+    private void toggleHelp(boolean on) {
+        helpPane.setVisible(on);
     }
 }
