@@ -51,8 +51,8 @@
     -fx-background-color: transparent;
     -fx-min-height: 50;
     -fx-max-height: 50;
-    -fx-min-width: 200;
-    -fx-max-width: 200;
+    -fx-min-width: 160;
+    -fx-max-width: 160;
 }
 .menu-button:hover {
     -fx-background-color: #a8dadc;

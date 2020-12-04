@@ -2,12 +2,17 @@ package tjc.controller;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Controller {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
 
     private double xOffset;
     private double yOffset;
@@ -17,6 +22,21 @@ public class Controller {
 
     @FXML
     private Button minBtn;
+
+    @FXML
+    private Button menu1;
+
+    @FXML
+    private Button menu2;
+
+    @FXML
+    private Button menu3;
+
+    @FXML
+    private Button menu4;
+
+    @FXML
+    private VBox menuBox;
 
     public void exit() {
         Platform.exit();
@@ -38,12 +58,22 @@ public class Controller {
         minBtn.getScene().getWindow().setY(event.getScreenY() + yOffset);
     }
 
+    public void menuClick(MouseEvent event) {
+
+    }
+
     public void toggleMenu() {
+        if (menuBox.isVisible()) menuBox.setVisible(false);
+        else menuBox.setVisible(true);
 
     }
 
     protected void setOpacity(Boolean opaque) {
         if (opaque) mainPane.setStyle("-fx-background-color: linear-gradient(to top right, rgba(2, 48, 71, 1), rgba(42, 157, 143, 1)");
         else mainPane.setStyle("-fx-background-color: linear-gradient(to top right, rgba(2,48,71,0.8), rgba(42, 157, 143, 0.8)");
+    }
+
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }
