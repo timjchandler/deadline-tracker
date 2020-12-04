@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="deadline-tracker" target="1.5" />
+      <module name="deadline-tracker" target="6" />
     </bytecodeTargetLevel>
   </component>
 </project>

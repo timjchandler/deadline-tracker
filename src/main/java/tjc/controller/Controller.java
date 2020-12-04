@@ -1,14 +1,19 @@
 package tjc.controller;
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.awt.event.ActionEvent;
+import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -36,6 +41,9 @@ public class Controller implements Initializable {
     private Button menu4;
 
     @FXML
+    private Slider opacitySlider;
+
+    @FXML
     private VBox menuBox;
 
     public void exit() {
@@ -58,22 +66,40 @@ public class Controller implements Initializable {
         minBtn.getScene().getWindow().setY(event.getScreenY() + yOffset);
     }
 
-    public void menuClick(MouseEvent event) {
-
+    public void settings() {
     }
 
     public void toggleMenu() {
-        if (menuBox.isVisible()) menuBox.setVisible(false);
-        else menuBox.setVisible(true);
+        menuBox.setVisible(!menuBox.isVisible());
+    }
+
+    protected void updateOpacity(ActionEvent e) {
+        String start = "-fx-background-color: linear-gradient(to top right, rgba(2, 48, 71, ";
+        String mid = "), rgba(42, 157, 143, ";
+        String end = "))";
+        System.out.println(start + opacitySlider.getValue() + mid + opacitySlider.getValue() + end);
+//        mainPane.setStyle(start + opacitySlider.getValue() + mid + opacitySlider.getValue() + end);
 
     }
 
-    protected void setOpacity(Boolean opaque) {
-        if (opaque) mainPane.setStyle("-fx-background-color: linear-gradient(to top right, rgba(2, 48, 71, 1), rgba(42, 157, 143, 1)");
-        else mainPane.setStyle("-fx-background-color: linear-gradient(to top right, rgba(2,48,71,0.8), rgba(42, 157, 143, 0.8)");
+    public void openGHPages() {
+        try {
+            URI u = new URI("https://timjchandler.github.io/deadline-tracker/");
+            java.awt.Desktop.getDesktop().browse(u);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void initialize(URL location, ResourceBundle resources) {
-
+        opacitySlider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                String start = "-fx-background-color: linear-gradient(to top right, rgba(2, 48, 71, ";
+                String mid = "), rgba(42, 157, 143, ";
+                String end = "))";
+                mainPane.setStyle(start + opacitySlider.getValue() + mid + opacitySlider.getValue() + end);
+            }
+        });
     }
 }

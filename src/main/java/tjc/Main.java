@@ -5,10 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import tjc.controller.Controller;
 
 import javax.swing.*;
 import java.net.URL;
@@ -24,7 +22,6 @@ public class Main extends Application {
         Scene scene = new Scene(root, 900, 600);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setScene(scene);
-//        new Controller(primaryStage);
         primaryStage.show();
     }
 
@@ -38,10 +35,6 @@ public class Main extends Application {
             // Sets task bar icon and name on mac, not needed for Windows or Linux
         }
         launch(args);
-    }
-
-    private void buildLogo() {
-
     }
 }
 
