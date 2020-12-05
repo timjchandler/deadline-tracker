@@ -31,7 +31,10 @@
                </Text>
             </children>
          </Pane>
-      </children></Pane>
+      </children>
+      <padding>
+         <Insets left="20.0" right="20.0" />
+      </padding></Pane>
    <Button layoutX="47.0" layoutY="14.0" mnemonicParsing="false" onAction="#minimize" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="10.0">
       <styleClass>
          <String fx:value="top-buttons" />
@@ -51,7 +54,7 @@
          <Pane prefHeight="200.0" prefWidth="10.0" />
          <Button mnemonicParsing="false" onAction="#toggleMenu" styleClass="menu-toggle" />
       </HBox>
-      <Button fx:id="menu1" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" prefWidth="180.0" text="Add" textFill="#f0efeb">
+      <Button fx:id="menu1" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onAction="#add" prefWidth="180.0" text="Add" textFill="#f0efeb">
          <font>
             <Font size="16.0" />
          </font>
@@ -63,7 +66,7 @@
             <Insets left="10.0" />
          </padding>
       </Button>
-      <Button fx:id="menu2" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" prefWidth="180.0" styleClass="menu-button" text="Remove" textFill="#f0efeb">
+      <Button fx:id="menu2" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onAction="#remove" prefWidth="180.0" styleClass="menu-button" text="Remove" textFill="#f0efeb">
          <font>
             <Font size="16.0" />
          </font>
@@ -71,7 +74,7 @@
             <Insets left="10.0" />
          </padding>
       </Button>
-      <Button fx:id="menu3" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onAction="#settings" prefWidth="180.0" text="Something" textFill="#f0efeb">
+      <Button fx:id="menu3" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" prefWidth="180.0" text="Something" textFill="#f0efeb">
          <font>
             <Font size="16.0" />
          </font>

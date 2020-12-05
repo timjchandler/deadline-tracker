@@ -1,5 +1,6 @@
 package tjc.model;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Deadline {
@@ -8,22 +9,18 @@ public class Deadline {
 
     private String name;
     private Importance importance;
-    private Date due;
+    private int day;
+    private int month;
+    private int year;
 
-    public Deadline(String name) {
-        this.name = name;
+    public Deadline(int year, int month, int day) {
+        this.day = day;
+        this.month = month + 1;
+        this.year = year;
     }
 
     public void setImportance(Importance importance) {
         this.importance = importance;
-    }
-
-    public void setDue(Date due) {
-        this.due = due;
-    }
-
-    public int getHours(Date now) {
-        return (int) (now.getTime() - due.getTime()) / (1000 * 3600);
     }
 
     public String getName() {
@@ -32,5 +29,13 @@ public class Deadline {
 
     public Importance getImportance() {
         return importance;
+    }
+
+    @Override
+    public String toString() {
+        return "Deadline{day=" + day +
+                ", month=" + month +
+                ", year=" + year +
+                '}';
     }
 }

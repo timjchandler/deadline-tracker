@@ -4,7 +4,9 @@ import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
@@ -16,6 +18,7 @@ import javafx.stage.Stage;
 import tjc.model.User;
 
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -59,6 +62,17 @@ public class Controller implements Initializable {
     public void exit() {
         Platform.exit();
         System.exit(0);
+    }
+
+    private void loadPage(String page) {
+        Parent root = null;
+        String path = "/view/" + page + ".fxml";
+        try {
+            root = FXMLLoader.load(getClass().getResource(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        contentPane.getChildren().add(root);
     }
 
     public void minimize() {
@@ -135,5 +149,14 @@ public class Controller implements Initializable {
             menuHelpArrow.setVisible(on);
             menuHelpText.setVisible(on);
         }
+    }
+
+    public void add() {
+        toggleHelp(false);
+        loadPage("calendar");
+    }
+
+    public void remove() {
+        User.printDeadlines();
     }
 }

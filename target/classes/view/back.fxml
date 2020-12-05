@@ -15,7 +15,7 @@
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#paneDragged" onMousePressed="#panePressed" prefHeight="600.0" prefWidth="900.0" styleClass="background" stylesheets="@../css/back.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tjc.controller.Controller">
    <Pane fx:id="contentPane" layoutX="20.0" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
       <children>
-         <Pane fx:id="helpPane" layoutX="125.0" layoutY="37.0" prefHeight="300.0" prefWidth="741.0">
+         <Pane fx:id="helpPane" layoutX="114.0" layoutY="37.0" prefHeight="300.0" prefWidth="741.0">
             <children>
                <Pane fx:id="menuHelpArrow" layoutX="626.0" styleClass="start-arrow" />
                <Text fx:id="menuHelpText" layoutX="178.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="start-text" text="Click here to open the menu ">
@@ -24,14 +24,17 @@
                   </font>
                </Text>
                <Pane fx:id="addHelpArrow" layoutX="457.0" layoutY="58.0" styleClass="add-arrow" />
-               <Text fx:id="addHelpText" layoutX="161.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="start-text" text="Click here to add a deadline">
+               <Text fx:id="addHelpText" layoutX="96.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="start-text" text="Click here to add a deadline">
                   <font>
                      <Font name="Arial Rounded MT Bold" size="31.0" />
                   </font>
                </Text>
             </children>
          </Pane>
-      </children></Pane>
+      </children>
+      <padding>
+         <Insets left="20.0" right="20.0" />
+      </padding></Pane>
    <Button layoutX="47.0" layoutY="14.0" mnemonicParsing="false" onAction="#minimize" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="10.0">
       <styleClass>
          <String fx:value="top-buttons" />
@@ -51,7 +54,7 @@
          <Pane prefHeight="200.0" prefWidth="10.0" />
          <Button mnemonicParsing="false" onAction="#toggleMenu" styleClass="menu-toggle" />
       </HBox>
-      <Button fx:id="menu1" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" prefWidth="180.0" text="Add" textFill="#f0efeb">
+      <Button fx:id="menu1" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onAction="#add" prefWidth="180.0" text="Add" textFill="#f0efeb">
          <font>
             <Font size="16.0" />
          </font>
@@ -63,7 +66,7 @@
             <Insets left="10.0" />
          </padding>
       </Button>
-      <Button fx:id="menu2" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" prefWidth="180.0" styleClass="menu-button" text="Remove" textFill="#f0efeb">
+      <Button fx:id="menu2" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onAction="#remove" prefWidth="180.0" styleClass="menu-button" text="Remove" textFill="#f0efeb">
          <font>
             <Font size="16.0" />
          </font>
@@ -71,7 +74,7 @@
             <Insets left="10.0" />
          </padding>
       </Button>
-      <Button fx:id="menu3" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onAction="#settings" prefWidth="180.0" text="Something" textFill="#f0efeb">
+      <Button fx:id="menu3" alignment="BASELINE_LEFT" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" prefWidth="180.0" text="Something" textFill="#f0efeb">
          <font>
             <Font size="16.0" />
          </font>

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class User {
 
-    private ArrayList<Deadline> deadlines;
+    private static ArrayList<Deadline> deadlines;
 
     public User(String name) {
         deadlines = new ArrayList<>();
@@ -14,8 +14,12 @@ public class User {
         return deadlines.size() == 0;
     }
 
-    public void addDeadline(Deadline deadline) {
+    public static void addDeadline(Deadline deadline) {
         deadlines.add(deadline);
+    }
+
+    public static void printDeadlines() {
+        for (Deadline d: deadlines) System.out.println(d.toString());
     }
 
 }
