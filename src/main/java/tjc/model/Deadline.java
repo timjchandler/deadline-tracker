@@ -1,8 +1,5 @@
 package tjc.model;
 
-import java.util.Calendar;
-import java.util.Date;
-
 public class Deadline {
 
     public enum Importance { LOW, MEDIUM, HIGH }
